@@ -1,0 +1,86 @@
+.rightbar{
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height:calc(100vh - 70px);
+    overflow: scroll;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    .container{
+        padding: 20px;
+
+        .item{
+            box-shadow: -18px 23px 37px -15px rgba(191,191,191,0.75);
+            -webkit-box-shadow: -18px 23px 37px -15px rgba(191,191,191,0.75);
+            -moz-box-shadow: -18px 23px 37px -15px rgba(191,191,191,0.75);
+            padding: 20px;
+            margin-bottom:20px;
+            
+            span{
+                color: grey;
+            }
+
+            .user{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 20px 0;
+
+                .userinfo{
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    position: relative;
+
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;object-fit: cover;
+                    }
+
+                    .online{
+                        width:12px;
+                        height: 12px;
+                        background-color:green;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 0;
+                        left:30px;
+                    }
+
+                    p{
+                        color: gray;
+                    }
+
+                    span{
+                        font-weight: bold;
+                    }
+                }
+
+                .buttons{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    button{
+                        border: none;
+                        padding: 5px;
+                        color: white;
+                        cursor: pointer;
+                        border-radius: 5px;
+
+                        &:first-child{
+                            background-color:rgba(3, 109, 231, 0.838)
+                        }
+                        &:last-child{
+                            background-color:rgba(210, 41, 35, 0.865);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
