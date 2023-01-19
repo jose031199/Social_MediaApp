@@ -1,11 +1,22 @@
+@import '../../style.scss';
 .rightbar{
+    @include themify($themes){
     flex: 3;
     position: sticky;
     top: 70px;
     height:calc(100vh - 70px);
     overflow: scroll;
+    background-color: themed("barColorSoft");
 
     &::-webkit-scrollbar{
+        display: none;
+    }
+
+    @include mobile{
+        display: none;
+    }
+
+    @include tablet{
         display: none;
     }
 
@@ -13,14 +24,14 @@
         padding: 20px;
 
         .item{
-            box-shadow: -18px 23px 37px -15px rgba(191,191,191,0.75);
-            -webkit-box-shadow: -18px 23px 37px -15px rgba(191,191,191,0.75);
-            -moz-box-shadow: -18px 23px 37px -15px rgba(191,191,191,0.75);
+            box-shadow: -18px 23px 37px -15px rgba(191,191,191,0.5);
+            -webkit-box-shadow: -18px 23px 37px -15px rgba(191,191,191,0.5);
+            -moz-box-shadow: -18px 23px 37px -15px rgba(191,191,191,0.5);
             padding: 20px;
             margin-bottom:20px;
-            
+            background-color:themed("barColor");
             span{
-                color: grey;
+                color:themed("textColor");
             }
 
             .user{
@@ -52,7 +63,7 @@
                     }
 
                     p{
-                        color: gray;
+                        color:themed("textColor");
                     }
 
                     span{
@@ -81,6 +92,6 @@
                 }
             }
         }
-    }
-
+     }
+   }
 }

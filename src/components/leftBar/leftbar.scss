@@ -1,10 +1,17 @@
+@import '../../style.scss';
 .leftbar{
+    @include themify($themes){
     flex: 2;
-    background-color: #3baea0;
+    background-color:themed("barColor");
+    color:themed("textColor");
     top: 70px;
     position: sticky;
     height: calc(100vh - 70px);
     overflow: scroll;
+
+    @include mobile{
+        display: none;
+    }
 
     &::-webkit-scrollbar{
         display: none;
@@ -16,6 +23,7 @@
             margin: 20px 0;
             border: none;
             height: 0.5px;
+            background-color: themed("border");
         }
         .menu{
             display: flex;
@@ -56,4 +64,5 @@
             }
         }
     }
+  }
 }

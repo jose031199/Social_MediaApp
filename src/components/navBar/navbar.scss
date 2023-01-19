@@ -1,13 +1,18 @@
+@import '../../style.scss';
+
 .navbar{
+    @include themify($themes){
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     height: 50px;
-    border: 1px solid rgba(11, 107, 11, .5);
+    border-bottom: 1px solid themed("border");
     position: sticky;
     top: 0;
-    background: white;
+    z-index: 999;
+    background:themed("backgroundColor");
+    color: themed("textColor");
 
     .left{
         display:flex;
@@ -29,13 +34,27 @@
             input{
                 border: none;
                 width:500px;
+                background:themed("backgroundColor");
+                color: themed("textColor");
+                @include mobile{
+                    display: none;
+                }
+
+                @include tablet{
+                    width: 200px;
+                }
             }
+
         }
     }
     .right{
         display: flex;
         align-items: center;
         gap: 20px;
+
+        @include mobile{
+            display: none;
+        }
         .user{
             display: flex;
             align-items: center;
@@ -51,4 +70,5 @@
             span{}
         }
     }
+  }
 }
